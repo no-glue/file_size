@@ -6,11 +6,11 @@ import argparse
 def size(format, file):
     statInfo = os.stat(file)
     if format == "b":
-        return statInfo.st_size
+        return round(float(statInfo.st_size), 2)
     elif format == "mb":
-        return statInfo.st_size / 1024 / 1024
+        return round(float(statInfo.st_size) / 1024 / 1024, 2)
     elif format == "gb":
-        return statInfo.st_size / 1024 / 1024 / 1024
+        return round(float(statInfo.st_size) / 1024 / 1024 / 1024, 2)
     return 0
 
 if __name__ == "__main__":
